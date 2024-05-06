@@ -10,8 +10,8 @@ const stopB = document.getElementById('stopB');
 let timerID = null;
 
 const startColor = () => {
-  document.getElementById('startB').disabled = true;
-  document.getElementById('stopB').disabled = false;
+  startB.disabled = true;
+  stopB.disabled = false;
   timerID = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
@@ -21,8 +21,8 @@ startB.addEventListener('click', startColor);
 
 const stopColor = () => {
   clearInterval(timerID);
-  document.getElementById('stopB').disabled = true;
-  document.getElementById('startB').disabled = false;
+  stopB.disabled = true;
+  startB.disabled = false;
 };
 
 stopB.addEventListener('click', stopColor);
