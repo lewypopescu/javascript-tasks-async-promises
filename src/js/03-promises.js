@@ -20,16 +20,16 @@ function createPromise(position, delay) {
 
 const submitAction = event => {
   event.preventDefault();
-  promises = [];
+  const promisesFinal = [];
 
   for (let i = 0; i < parseInt(amountInput.value); i++) {
     const positionFor = i + 1;
     const delayFor = parseInt(delayInput.value) + i * parseInt(stepInput.value);
 
-    promises.push(createPromise(positionFor, delayFor));
+    promisesFinal.push(createPromise(positionFor, delayFor));
   }
 
-  promises.forEach(promise => {
+  promisesFinal.forEach(promise => {
     promise
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
